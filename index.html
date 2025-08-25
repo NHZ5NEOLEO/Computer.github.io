@@ -3,42 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang cá nhân</title>
+  <title>Trang cá nhân - Nam</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Xin chào, tôi là Nam</h1>
-    <p>Lập trình viên web & đam mê công nghệ</p>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Xin chào, tôi là <span class="highlight">Nam</span></h1>
+      <p>Lập trình viên web & đam mê công nghệ</p>
+    </div>
   </header>
 
-  <nav>
+  <nav class="navbar">
     <a href="#about">Giới thiệu</a>
     <a href="#projects">Dự án</a>
     <a href="#contact">Liên hệ</a>
   </nav>
 
   <main>
-    <section id="about">
-      <h2>Về tôi</h2>
-      <p>Tôi yêu thích lập trình, đặc biệt là phát triển website hiện đại và thân thiện với người dùng.</p>
+    <section id="about" class="section">
+      <h2>👨‍💻 Về tôi</h2>
+      <p>
+        Tôi yêu thích lập trình, đặc biệt là phát triển website hiện đại, thân thiện với người dùng.
+        Ngoài ra tôi cũng quan tâm đến trí tuệ nhân tạo và lập trình game.
+      </p>
     </section>
 
-    <section id="projects">
-      <h2>Dự án</h2>
-      <div class="card">
-        <h3>Website Quản lý Ký túc xá</h3>
-        <p>Ứng dụng quản lý sinh viên ở ký túc xá, sử dụng HTML, CSS, JS, và PHP.</p>
-      </div>
-      <div class="card">
-        <h3>Khu Vườn Trên Mây</h3>
-        <p>Một game mô phỏng nông trại nhỏ do tôi tự viết bằng C++.</p>
+    <section id="projects" class="section">
+      <h2>📂 Dự án</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Website Quản lý Ký túc xá</h3>
+          <p>Ứng dụng quản lý sinh viên ở ký túc xá, sử dụng HTML, CSS, JS, và PHP.</p>
+        </div>
+        <div class="card">
+          <h3>Khu Vườn Trên Mây</h3>
+          <p>Một game mô phỏng nông trại nhỏ do tôi tự viết bằng C++.</p>
+        </div>
+        <div class="card">
+          <h3>Blog cá nhân</h3>
+          <p>Website chia sẻ kiến thức và kinh nghiệm học lập trình.</p>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Liên hệ</h2>
-      <form id="contactForm">
+    <section id="contact" class="section">
+      <h2>📩 Liên hệ</h2>
+      <form id="contactForm" class="contact-form">
         <input type="text" placeholder="Họ và tên" required>
         <input type="email" placeholder="Email" required>
         <textarea placeholder="Nội dung" required></textarea>

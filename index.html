@@ -1,65 +1,39 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang cá nhân - Alex</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Xin chào, tôi là <span class="highlight">Alex</span></h1>
-      <p>Lập trình viên web & đam mê công nghệ</p>
-    </div>
-  </header>
+<section id="search" class="section">
+  <h2>🔎 Tìm kiếm từ khóa</h2>
+  <input type="text" id="searchBox" placeholder="Nhập từ khóa...">
+  <button onclick="search()">Tìm</button>
 
-  <nav class="navbar">
-    <a href="#about">Giới thiệu</a>
-    <a href="#projects">Dự án</a>
-    <a href="#contact">Liên hệ</a>
-  </nav>
+  <h3>📊 Bảng thống kê</h3>
+  <ul id="stats"></ul>
+</section>
 
-  <main>
-    <section id="about" class="section">
-      <h2>👨‍💻 Về tôi</h2>
-      <p>
-        Tôi yêu thích lập trình, đặc biệt là phát triển website hiện đại, thân thiện với người dùng.
-        Ngoài ra tôi cũng quan tâm đến trí tuệ nhân tạo và lập trình game.
-      </p>
-    </section>
+<script>
+function search() {
+  let keyword = document.getElementById("searchBox").value.trim();
+  if (!keyword) return;
 
-    <section id="projects" class="section">
-      <h2>📂 Dự án</h2>
-      <div class="projects">
-        <div class="card">
-          <h3>Website Quản lý Ký túc xá</h3>
-          <p>Ứng dụng quản lý sinh viên ở ký túc xá, sử dụng HTML, CSS, JS, và PHP.</p>
-        </div>
-        <div class="card">
-          <h3>Khu Vườn Trên Mây</h3>
-          <p>Một game mô phỏng nông trại nhỏ do tôi tự viết bằng C++.</p>
-        </div>
-        <div class="card">
-          <h3>Blog cá nhân</h3>
-          <p>Website chia sẻ kiến thức và kinh nghiệm học lập trình.</p>
-        </div>
-      </div>
-    </section>
+  // Lấy dữ liệu cũ từ LocalStorage
+  let stats = JSON.parse(localStorage.getItem("searchStats")) || {};
 
-    <section id="contact" class="section">
-      <h2>📩 Liên hệ</h2>
-      <form id="contactForm" class="contact-form">
-        <input type="text" placeholder="Họ và tên" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Nội dung" required></textarea>
-        <button type="submit">Gửi</button>
-      </form>
-    </section>
-  </main>
+  // Đếm số lần tìm kiếm
+  stats[keyword] = (stats[keyword] || 0) + 1;
 
-  <footer>
-    <p>&copy; 2025 Alex | All Rights Reserved</p>
-  </footer>
-</body>
-</html>
+  // Lưu lại
+  localStorage.setItem("searchStats", JSON.stringify(stats));
+
+  // Hiển thị lại bảng
+  renderStats();
+}
+
+function renderStats() {
+  let stats = JSON.parse(localStorage.getItem("searchStats")) || {};
+  let list = document.getElementById("stats");
+  list.innerHTML = "";
+  for (let key in stats) {
+    list.innerHTML += `<li><b>${key}</b>: ${stats[key]} lần</li>`;
+  }
+}
+
+// Hiển thị khi load trang
+renderStats();
+</script>

@@ -176,36 +176,66 @@ body {
   background: #005fcc;
 }
 
-/* Stats Table */
+/* Stats Table - Modern Style */
 #statsTable {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 25px;
   background: white;
-  border-radius: 12px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+#statsTable thead {
+  background: linear-gradient(135deg, #4facfe, #0078ff);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 #statsTable th, 
 #statsTable td {
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-align: left;
 }
 
-#statsTable thead {
-  background: #0078ff;
-  color: white;
+#statsTable tbody tr {
+  transition: 0.3s ease;
+}
+
+#statsTable tbody tr:hover {
+  background: #f0f7ff;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Badge cho số lần tìm kiếm */
+#statsTable td:last-child {
   font-weight: bold;
 }
 
-#statsTable tr:nth-child(even) {
-  background: #f9f9f9;
+#statsTable td:last-child::before {
+  content: "🔎 ";
 }
 
-#statsTable tr:hover {
-  background: #eef6ff;
-  transition: 0.3s;
+#statsTable td:last-child {
+  background: #eaf3ff;
+  color: #0078ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  min-width: 60px;
+}
+
+/* Hiệu ứng xuất hiện */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* =======================

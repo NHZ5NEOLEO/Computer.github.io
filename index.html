@@ -54,14 +54,17 @@
     </section>
 
     <!-- Tìm kiếm từ khóa -->
-    <section id="search" class="section">
-      <h2>🔎 Tìm kiếm từ khóa</h2>
-      <input type="text" id="searchBox" placeholder="Nhập từ khóa...">
-      <button onclick="search()">Tìm</button>
+<h3>📊 Bảng thống kê</h3>
+<table id="statsTable">
+  <thead>
+    <tr>
+      <th>Từ khóa</th>
+      <th>Số lần tìm kiếm</th>
+    </tr>
+  </thead>
+  <tbody id="statsBody"></tbody>
+</table>
 
-      <h3>📊 Bảng thống kê</h3>
-      <ul id="stats"></ul>
-    </section>
 
     <!-- Liên hệ -->
     <section id="contact" class="section">
@@ -99,15 +102,19 @@
       renderStats();
     }
 
-    function renderStats() {
-      let stats = JSON.parse(localStorage.getItem("searchStats")) || {};
-      let list = document.getElementById("stats");
-      list.innerHTML = "";
-      for (let key in stats) {
-        list.innerHTML += `<li><b>${key}</b>: ${stats[key]} lần</li>`;
-      }
-    }
-
+  function renderStats() {
+  let stats = JSON.parse(localStorage.getItem("searchStats")) || {};
+  let body = document.getElementById("statsBody");
+  body.innerHTML = "";
+  for (let key in stats) {
+    body.innerHTML += `
+      <tr>
+        <td>${key}</td>
+        <td>${stats[key]}</td>
+      </tr>
+    `;
+  }
+}
     // Hiển thị bảng khi load trang
     renderStats();
   </script>

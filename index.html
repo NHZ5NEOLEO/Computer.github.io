@@ -8,6 +8,7 @@
   <meta name="author" content="Alex">
   <title>Blog Game - Alex</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.png">
 </head>
 <body>
   <!-- Header -->
@@ -24,7 +25,7 @@
     </div>
   </header>
 
-  <!-- Banner -->
+  <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h2>Chào mừng đến với Blog Game</h2>
@@ -34,28 +35,43 @@
   </section>
 
   <!-- Tin tức -->
-  <section id="news" class="section">
+  <section id="news" class="section fade-in">
     <div class="container">
       <h2>📰 Tin tức mới nhất</h2>
       <div class="grid">
         <article class="card">
-          <img src="images/news1.jpg"
+          <img src="images/news1.jpg" alt="Tin tức game 1">
           <h3>Tựa game AAA sắp ra mắt 2025</h3>
           <p>Game thủ đang háo hức chờ đợi một siêu phẩm hành động với đồ họa chân thực...</p>
           <a href="#">Đọc tiếp</a>
+          <div class="share-buttons">
+            <span>Chia sẻ:</span>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Zalo</a>
+          </div>
         </article>
+
         <article class="card">
           <img src="images/news2.jpg" alt="Tin tức game 2">
           <h3>Giải đấu Esports lớn nhất năm</h3>
           <p>Hàng triệu người xem trực tuyến, các team hàng đầu thế giới tranh tài...</p>
           <a href="#">Đọc tiếp</a>
+          <div class="share-buttons">
+            <span>Chia sẻ:</span>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Zalo</a>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Đánh giá game -->
-  <section id="reviews" class="section">
+  <!-- Đánh giá -->
+  <section id="reviews" class="section fade-in">
     <div class="container">
       <h2>⭐ Đánh giá game</h2>
       <div class="grid">
@@ -65,6 +81,7 @@
           <p>Gameplay cuốn hút, cốt truyện hấp dẫn, nhưng đồ họa vẫn còn hạn chế...</p>
           <a href="#">Xem chi tiết</a>
         </article>
+
         <article class="card">
           <img src="images/review2.jpg" alt="Đánh giá game 2">
           <h3>Review: Game FPS Y</h3>
@@ -76,7 +93,7 @@
   </section>
 
   <!-- Hướng dẫn -->
-  <section id="guides" class="section">
+  <section id="guides" class="section fade-in">
     <div class="container">
       <h2>📘 Hướng dẫn chơi game</h2>
       <ul class="guide-list">
@@ -88,7 +105,7 @@
   </section>
 
   <!-- Liên hệ -->
-  <section id="contact" class="section contact">
+  <section id="contact" class="section fade-in contact">
     <div class="container">
       <h2>📩 Liên hệ</h2>
       <form class="contact-form">
@@ -106,5 +123,26 @@
       <p>&copy; 2025 Alex Game Blog | All Rights Reserved</p>
     </div>
   </footer>
+
+  <!-- Script: hiệu ứng và form -->
+  <script>
+    // Hiệu ứng fade-in khi cuộn
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Xử lý gửi form
+    document.querySelector('.contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Cảm ơn bạn! Thông tin đã được gửi.');
+      e.target.reset();
+    });
+  </script>
 </body>
 </html>

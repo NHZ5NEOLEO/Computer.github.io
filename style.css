@@ -184,6 +184,38 @@ body {
   background: #e68900;
 }
 
+/* Share buttons */
+.share-buttons {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.share-buttons span {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.share-buttons a {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+/* Màu cho từng MXH */
+.share-buttons a:nth-child(2) { background: #3b5998; } /* Facebook */
+.share-buttons a:nth-child(3) { background: #1da1f2; } /* Twitter */
+.share-buttons a:nth-child(4) { background: #0077b5; } /* LinkedIn */
+.share-buttons a:nth-child(5) { background: #0088cc; } /* Zalo */
+
+.share-buttons a:hover {
+  opacity: 0.8;
+}
+
 /* Footer */
 footer {
   background: #111;

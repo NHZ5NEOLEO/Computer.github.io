@@ -1,117 +1,122 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Blog chia sẻ kiến thức lập trình web, HTML, CSS, JavaScript và các dự án cá nhân.">
-   <meta name="keywords" content="lập trình web, HTML, CSS, JavaScript, blog lập trình, quản lý ký túc xá, Alex blog">
-  <title>Trang cá nhân - Alex</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Blog chia sẻ đánh giá game, tin tức indie, hướng dẫn và game mini của Alex." />
+  <meta name="keywords" content="blog game, đánh giá game, indie game, game mini, Alex"/>
+  <title>Alex — Blog Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Phần đầu -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Xin chào, tôi là <span class="highlight">Alex</span></h1>
-      <p>Lập trình viên web & đam mê công nghệ</p>
-    </div>
-  </header>
-
-  <!-- Thanh menu -->
-  <nav class="navbar">
-    <a href="#about">Giới thiệu</a>
-    <a href="#projects">Dự án</a>
-    <a href="#search">Tìm kiếm</a>
-    <a href="#contact">Liên hệ</a>
-  </nav>
-
-  <!-- Nội dung chính -->
-  <main>
-    <!-- Giới thiệu -->
-    <section id="about" class="section">
-      <h2>👨‍💻 Về tôi</h2>
-      <p>
-        Tôi yêu thích lập trình, đặc biệt là phát triển website hiện đại, thân thiện với người dùng.
-        Ngoài ra tôi cũng quan tâm đến trí tuệ nhân tạo và lập trình game.
-      </p>
-    </section>
-
-    <!-- Dự án -->
-    <section id="projects" class="section">
-      <h2>📂 Dự án</h2>
-      <div class="projects">
-        <div class="card">
-          <h3>Website Quản lý Ký túc xá</h3>
-          <p>Ứng dụng quản lý sinh viên ở ký túc xá, sử dụng HTML, CSS, JS, và PHP.</p>
-        </div>
-        <div class="card">
-          <h3>Khu Vườn Trên Mây</h3>
-          <p>Một game mô phỏng nông trại nhỏ do tôi tự viết bằng C++.</p>
-        </div>
-        <div class="card">
-          <h3>Blog cá nhân</h3>
-          <p>Website chia sẻ kiến thức và kinh nghiệm học lập trình.</p>
-        </div>
+  <div class="container">
+    <header class="hero card" role="banner">
+      <div>
+        <div class="title">Alex — <span class="highlight">Game Dev & Reviews</span></div>
+        <div class="subtitle">Blog chia sẻ review game, tin indie, hướng dẫn dev và game mini do tôi phát triển.</div>
       </div>
-    </section>
+      <div style="margin-left:auto;text-align:right">
+        <div class="muted">Follow: @alex.dev</div>
+        <div class="muted">Đam mê: indie, pixel art, gameplay design</div>
+      </div>
+    </header>
 
-    <!-- Tìm kiếm từ khóa -->
-    <section id="search" class="section">
-      <h2>🔎 Tìm kiếm từ khóa</h2>
-      <input type="text" id="searchBox" placeholder="Nhập từ khóa...">
-      <button onclick="search()">Tìm</button>
+    <nav class="navbar" aria-label="Điều hướng chính">
+      <a href="#about">Giới thiệu</a>
+      <a href="#posts">Bài viết</a>
+      <a href="#mini-game">Game Mini</a>
+      <a href="#search">Tìm kiếm</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
 
-      <h3>📊 Bảng thống kê</h3>
-      <ul id="stats"></ul>
-    </section>
+    <main class="grid" role="main">
+      <!-- Left column -->
+      <section class="content">
+        <!-- About -->
+        <section id="about" class="card" style="margin-bottom:18px">
+          <h2>👋 Giới thiệu</h2>
+          <p class="muted" style="margin-top:8px">
+            Mình là Alex — lập trình viên kiêm nhà phát triển game indie. Ở đây mình viết review, hướng dẫn dev, cập nhật dự án game và
+            thỉnh thoảng tung game nhỏ để mọi người chơi thử.
+          </p>
+        </section>
 
-    <!-- Liên hệ -->
-    <section id="contact" class="section">
-      <h2>📩 Liên hệ</h2>
-      <form id="contactForm" class="contact-form">
-        <input type="text" placeholder="Họ và tên" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Nội dung" required></textarea>
-        <button type="submit">Gửi</button>
-      </form>
-    </section>
-  </main>
+        <!-- Posts -->
+        <section id="posts" class="card posts" style="margin-bottom:18px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <h2>📚 Bài viết mới</h2>
+            <div>
+              <select id="filterTag" class="btn ghost" onchange="applyFilter()">
+                <option value="">Tất cả tag</option>
+              </select>
+            </div>
+          </div>
+          <div id="postsList" style="margin-top:12px"></div>
+          <div style="margin-top:8px;text-align:center">
+            <button class="btn" onclick="openNewPost()">Viết bài mới</button>
+          </div>
+        </section>
 
-  <!-- Footer -->
+        <!-- Mini game -->
+        <section id="mini-game" class="card mini-game" style="margin-bottom:18px">
+          <h2>🎮 Game Mini: Collect Stars</h2>
+          <canvas id="gameCanvas" width="420" height="240"></canvas>
+          <div style="display:flex;gap:8px">
+            <button class="btn" onclick="startGame()">Bắt đầu</button>
+            <button class="btn ghost" onclick="resetGame()">Đặt lại</button>
+          </div>
+          <div class="muted" id="gameScore">Điểm: 0</div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="card">
+          <h2>📩 Liên hệ</h2>
+          <form id="contactForm" class="contact-form" onsubmit="submitContact(event)" style="margin-top:10px;display:grid;gap:8px">
+            <input id="name" type="text" placeholder="Họ và tên" required />
+            <input id="email" type="email" placeholder="Email" required />
+            <textarea id="message" placeholder="Tin nhắn" required></textarea>
+            <button class="btn" type="submit">Gửi</button>
+          </form>
+        </section>
+      </section>
+
+      <!-- Right column -->
+      <aside class="sidebar">
+        <div class="card">
+          <h3>🔎 Tìm kiếm & Thống kê</h3>
+          <div class="searchBox" style="margin-top:10px">
+            <input id="searchInput" placeholder="Tìm bài viết..." oninput="liveSearch()" />
+            <button class="btn" onclick="doSearch()">Tìm</button>
+          </div>
+          <h4 style="margin-top:10px">📊 Thống kê từ khoá</h4>
+          <ul id="stats" class="stat-list"></ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>🔥 Bài nổi bật</h4>
+          <div style="margin-top:8px">
+            <div style="display:flex;gap:10px;align-items:center">
+              <div style="width:58px;height:48px;background:linear-gradient(45deg,#7c3aed,#06b6d4);border-radius:8px"></div>
+              <div>
+                <div style="font-weight:700">Pixel Dungeon — Review</div>
+                <div class="muted" style="font-size:13px">Cơ chế roguelike đơn giản nhưng lôi cuốn</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>🏷 Tags</h4>
+          <div id="tagsCloud" style="margin-top:8px;display:flex;flex-wrap:wrap;gap:8px"></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
   <footer>
-    <p>&copy; 2025 Alex | All Rights Reserved</p>
+    &copy; 2025 Alex — Blog Game • Built with ❤️
   </footer>
 
-  <!-- Script xử lý tìm kiếm -->
-  <script>
-    function search() {
-      let keyword = document.getElementById("searchBox").value.trim();
-      if (!keyword) return;
-
-      // Lấy dữ liệu cũ từ LocalStorage
-      let stats = JSON.parse(localStorage.getItem("searchStats")) || {};
-
-      // Đếm số lần tìm kiếm
-      stats[keyword] = (stats[keyword] || 0) + 1;
-
-      // Lưu lại vào LocalStorage
-      localStorage.setItem("searchStats", JSON.stringify(stats));
-
-      // Hiển thị lại bảng
-      renderStats();
-    }
-
-    function renderStats() {
-      let stats = JSON.parse(localStorage.getItem("searchStats")) || {};
-      let list = document.getElementById("stats");
-      list.innerHTML = "";
-      for (let key in stats) {
-        list.innerHTML += `<li><b>${key}</b>: ${stats[key]} lần</li>`;
-      }
-    }
-
-    // Hiển thị bảng khi load trang
-    renderStats();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

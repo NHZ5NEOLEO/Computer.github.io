@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập - Alex Game Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <h2>🔐 Đăng nhập</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Tên đăng nhập" required>
+      <input type="password" id="password" placeholder="Mật khẩu" required>
+      <button type="submit">Đăng nhập</button>
+    </form>
+    <p>Chưa có tài khoản? <a href="#" id="registerLink">Đăng ký</a></p>
+  </div>
+
+  <script>
+    // Đăng nhập demo lưu trên localStorage
+    document.getElementById("loginForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+
+      const storedUser = localStorage.getItem("user");
+      const storedPass = localStorage.getItem("pass");
+
+      if (user === storedUser && pass === storedPass) {
+        alert("Đăng nhập thành công!");
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "index.html";
+      } else {
+        alert("Sai thông tin hoặc chưa đăng ký!");
+      }
+    });
+
+    document.getElementById("registerLink").addEventListener("click", e => {
+      e.preventDefault();
+      const newUser = prompt("Nhập tên đăng ký:");
+      const newPass = prompt("Nhập mật khẩu:");
+      if (newUser && newPass) {
+        localStorage.setItem("user", newUser);
+        localStorage.setItem("pass", newPass);
+        alert("Đăng ký thành công, hãy đăng nhập lại!");
+      }
+    });
+  </script>
+</body>
+</html>
+

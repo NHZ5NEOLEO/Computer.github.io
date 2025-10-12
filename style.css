@@ -61,13 +61,6 @@ hero {
   overflow: hidden;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* phủ màu đen trong suốt */
-}
-
 .hero-content {
   position: relative;
   z-index: 1;

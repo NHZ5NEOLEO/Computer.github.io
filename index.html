@@ -149,6 +149,27 @@
       alert('Cảm ơn bạn! Thông tin đã được gửi.');
       e.target.reset();
     });
+
+    // 🔥 Đổi ảnh nền hero khi bấm menu
+  const hero = document.querySelector('.hero');
+  const menuLinks = document.querySelectorAll('.navbar a');
+
+  const bgImages = {
+    "#home": "images/banner.png",
+    "#news": "images/news1.jpg",
+    "#reviews": "images/review1.jpg",
+    "#guides": "images/review2.jpg",
+    "#contact": "images/news2.jpg",
+  };
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const section = link.getAttribute('href');
+      if (bgImages[section]) {
+        hero.style.background = `url('${bgImages[section]}') center/cover no-repeat`;
+      }
+    });
+  });
   </script>
 </body>
 </html>

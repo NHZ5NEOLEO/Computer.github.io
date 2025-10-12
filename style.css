@@ -23,28 +23,26 @@ body {
 /* 🔹 HEADER / NAVBAR   */
 /* -------------------- */
 .header {
-  background: #1a1a1a;
+  background: #111;
   color: #fff;
-  padding: 20px 0;
-  border-bottom: 3px solid #ff9800;
+  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .header .container {
   display: flex;
-  justify-content: space-between; /* ✅ logo trái - menu phải */
+  justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  width: 90%;
+  margin: auto;
 }
 
-/* Logo */
 .logo {
   font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-  margin-left: 20px;
+  font-weight: bold;
 }
 
 .navbar {

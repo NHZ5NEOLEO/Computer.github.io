@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Hollow Knight: Silksong - Alex Game Blog</title>
+  <link rel="stylesheet" href="style-detail.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">🎮 Alex Game Blog</h1>
+      <nav class="navbar">
+        <a href="index.html">Trang chủ</a>
+        <a href="login.html" id="userStatus">Đăng nhập</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>🎯 Review: Hollow Knight - Silksong</h2>
+      <img src="images/review1.jpg" alt="Hollow Knight Silksong" class="detail-img">
+
+      <h3>🕹️ Giới thiệu</h3>
+      <p>
+        <b>Hollow Knight: Silksong</b> là phần tiếp theo được mong chờ suốt nhiều năm của siêu phẩm indie đình đám – <i>Hollow Knight</i>. 
+        Trò chơi được phát triển bởi <b>Team Cherry</b> và mang đến một cuộc hành trình hoàn toàn mới cùng nhân vật chính Hornet – 
+        nữ chiến binh linh hoạt với tốc độ di chuyển nhanh hơn và bộ kỹ năng hoàn toàn khác biệt.
+      </p>
+
+      <h3>📅 Ngày phát hành & Nền tảng</h3>
+      <ul>
+        <li><b>Nhà phát triển:</b> Team Cherry</li>
+        <li><b>Thể loại:</b> Metroidvania, Hành động, Phiêu lưu</li>
+        <li><b>Nền tảng:</b> PC, Nintendo Switch, PlayStation, Xbox</li>
+        <li><b>Dự kiến phát hành:</b> Năm 2025</li>
+      </ul>
+
+      <h3>⚔️ Lối chơi (Gameplay)</h3>
+      <p>
+        Silksong giữ nguyên tinh thần “khám phá & thử thách” của bản gốc, nhưng tốc độ và nhịp độ chiến đấu đã được đẩy lên đáng kể. 
+        Hornet có thể sử dụng dây tơ để vung, bám, hoặc phản công linh hoạt trong không trung, tạo ra phong cách chiến đấu mạnh mẽ và đẹp mắt hơn bao giờ hết.
+      </p>
+
+      <h3>🎨 Đồ họa & Âm thanh</h3>
+      <p>
+        Vẫn trung thành với phong cách vẽ tay 2D đầy nghệ thuật, Silksong gây ấn tượng mạnh với tông màu tươi sáng hơn và độ chi tiết cao trong từng khung cảnh. 
+        Hiệu ứng ánh sáng, chuyển động và đổ bóng đều được trau chuốt kỹ lưỡng.  
+        Nhạc nền, sáng tác bởi <b>Christopher Larkin</b>, tiếp tục là điểm nhấn — du dương, đầy cảm xúc, và cực kỳ phù hợp với từng khu vực trong game.
+      </p>
+
+      <h3>⭐ Cảm nhận & Đánh giá ban đầu</h3>
+      <p>
+        Với những gì Team Cherry đã làm được, Silksong hứa hẹn không chỉ kế thừa mà còn nâng tầm trải nghiệm “Metroidvania”. 
+        Người chơi sẽ được khám phá hơn 150 kẻ địch mới, hàng chục nhiệm vụ phụ, cơ chế chế tạo vật phẩm, và hệ thống nâng cấp phong phú.
+      </p>
+      <p>
+        Cộng đồng fan đang đặt nhiều kỳ vọng rằng Silksong sẽ trở thành một trong những tựa game indie xuất sắc nhất thập kỷ.
+      </p>
+
+      <h3>🏁 Kết luận</h3>
+      <p>
+        Nếu bạn yêu thích những thử thách khó nhằn, các trận chiến đòi hỏi kỹ năng và cảm giác chinh phục, <b>Hollow Knight: Silksong</b> chắc chắn là một tựa game bạn không thể bỏ qua trong năm 2025.
+      </p>
+
+      <button onclick="window.history.back()">⬅ Quay lại</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Alex Game Blog | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Hiển thị trạng thái đăng nhập
+    if (localStorage.getItem("loggedIn") === "true") {
+      const userStatus = document.getElementById("userStatus");
+      userStatus.textContent = "Đăng xuất";
+      userStatus.onclick = () => {
+        localStorage.removeItem("loggedIn");
+        alert("Bạn đã đăng xuất.");
+        window.location.reload();
+      };
+    }
+  </script>
+</body>
+</html>

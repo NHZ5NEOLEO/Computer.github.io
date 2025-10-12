@@ -1,78 +1,82 @@
-/* Reset */
+/* ======================================= */
+/* 🎮 ALEX GAME BLOG - STYLE.CSS           */
+/* Cập nhật: Sắp xếp lại theo khu vực     */
+/* ======================================= */
+
+/* -------------------- */
+/* 🔹 CẤU HÌNH CHUNG   */
+/* -------------------- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
   line-height: 1.6;
-  background: #f9f9f9;
-  color: #333;
-  scroll-behavior: smooth;
 }
 
-/* Header */
+/* -------------------- */
+/* 🔹 HEADER / NAVBAR   */
+/* -------------------- */
 .header {
-  background: #111;
+  background: #1a1a1a;
   color: #fff;
-  padding: 15px 0;
+  padding: 20px 0;
+  border-bottom: 3px solid #ff9800;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.container {
   width: 90%;
+  max-width: 1200px;
   margin: auto;
 }
 
 .logo {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.navbar {
+  margin-top: 10px;
 }
 
 .navbar a {
-  color: #fff;
-  margin-left: 20px;
+  color: #ffcc00;
   text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
   transition: 0.3s;
 }
 
 .navbar a:hover {
-  color: #ff9800;
+  color: #fff;
+  text-shadow: 0 0 8px #ffcc00;
 }
 
-/* Hero */
+/* -------------------- */
+/* 🔹 HERO SECTION      */
+/* -------------------- */
 .hero {
-  position: relative;
+  background: url("images/banner.png") no-repeat center center/cover;
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
-  overflow: hidden;
-  transition: background 0.8s ease-in-out; /* 👈 hiệu ứng mượt khi đổi ảnh */
-  background: url("images/banner.png") center/cover no-repeat;
 }
 
-/* Lớp phủ mờ giúp chữ dễ đọc */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
@@ -81,113 +85,120 @@ body {
 }
 
 .btn {
-  padding: 10px 20px;
   background: #ff9800;
   color: #fff;
-  text-decoration: none;
+  padding: 12px 25px;
   border-radius: 5px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  text-decoration: none;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .btn:hover {
   background: #e68900;
-  transform: scale(1.05);
 }
 
-/* Section */
+/* -------------------- */
+/* 🔹 SECTION CHUNG     */
+/* -------------------- */
 .section {
   padding: 60px 0;
 }
 
 .section h2 {
+  color: #ff9800;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 28px;
-  color: #222;
 }
 
-/* Grid layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-/* Card */
 .card {
   background: #fff;
-  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   transition: 0.3s;
-  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: 240px;              /* 👈 Tất cả ảnh có cùng chiều cao */
-  object-fit: cover;          /* 👈 Cắt ảnh cho khung đều */
   border-radius: 10px;
   margin-bottom: 15px;
-  transition: transform 0.4s ease;
 }
 
-.card img:hover {
-  transform: scale(1.05);     /* 👈 Hiệu ứng phóng nhẹ khi hover */
-}
-
+/* -------------------- */
+/* 🔹 NEWS & REVIEW     */
+/* -------------------- */
 .card h3 {
-  font-size: 20px;
+  color: #333;
   margin-bottom: 10px;
 }
 
 .card p {
   font-size: 15px;
+  color: #555;
   margin-bottom: 15px;
 }
 
 .card a {
   color: #ff9800;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: 600;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+.card a:hover {
+  text-decoration: underline;
 }
 
-/* Guide */
+/* -------------------- */
+/* 🔹 HƯỚNG DẪN (GUIDE) */
+/* -------------------- */
 .guide-list {
   list-style: none;
-  text-align: center;
+  padding-left: 0;
 }
 
 .guide-list li {
-  margin-bottom: 15px;
+  background: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.guide-list li:hover {
+  background: #ff9800;
+  color: #fff;
+  transform: translateX(5px);
 }
 
 .guide-list a {
-  position: relative;
-  display: inline-block;
-  padding: 8px 15px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.guide-list a:hover {
-  background: #ff9800;
-  color: #fff;
-  transform: translateY(-3px);
+/* -------------------- */
+/* 🔹 FORM LIÊN HỆ      */
+/* -------------------- */
+.contact {
+  background: #fffbe6;
 }
 
-
-/* Contact */
 .contact-form {
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -195,98 +206,30 @@ body {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
   margin-bottom: 15px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  transition: 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #ff9800;
-  box-shadow: 0 0 6px rgba(255,152,0,0.4);
-  transform: scale(1.01);
 }
 
 .contact-form button {
-  padding: 12px;
+  padding: 10px;
   background: #ff9800;
-  border: none;
   color: #fff;
+  border: none;
   border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .contact-form button:hover {
   background: #e68900;
-  transform: scale(1.05);
 }
 
-/* Share buttons */
-.share-buttons {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.share-buttons span {
-  font-weight: bold;
-  margin-right: 8px;
-}
-
-.share-buttons a {
-  display: inline-block;
-  margin-right: 8px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #fff;
-  font-size: 13px;
-  transition: 0.3s;
-}
-
-.share-buttons a:nth-child(2) { background: #3b5998; } /* Facebook */
-.share-buttons a:nth-child(3) { background: #1da1f2; } /* Twitter */
-.share-buttons a:nth-child(4) { background: #0077b5; } /* LinkedIn */
-.share-buttons a:nth-child(5) { background: #0088cc; } /* Zalo */
-
-.share-buttons a:hover {
-  opacity: 0.8;
-}
-
-/* Hiệu ứng fade-in */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Footer */
-footer {
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-content h2 { font-size: 30px; }
-  .hero-content p { font-size: 16px; }
-  .navbar a { display: block; margin: 10px 0; }
-  .header .container { flex-direction: column; }
-}
-
-/* =============================== */
-/* 🔐 Trang Đăng nhập / Đăng ký */
-/* =============================== */
+/* -------------------- */
+/* 🔹 LOGIN / REGISTER  */
+/* -------------------- */
 body.login-page,
 body.register-page {
   background: url("images/login.jpg") no-repeat center center/cover;
@@ -294,10 +237,8 @@ body.register-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Poppins", sans-serif;
 }
 
-/* Container chính */
 .login-container {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
@@ -311,39 +252,24 @@ body.register-page {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Tiêu đề */
 .login-container h2 {
-  font-size: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #ffcc00;
-  letter-spacing: 1px;
+  font-size: 28px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Input */
 .login-container input {
   width: 100%;
-  padding: 12px 14px;
+  padding: 12px;
   margin-bottom: 15px;
   border: none;
   border-radius: 8px;
   outline: none;
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  font-size: 15px;
-  transition: 0.3s;
 }
 
-.login-container input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.login-container input:focus {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 8px #ffcc00;
-}
-
-/* Nút đăng nhập / đăng ký */
 .login-container button {
   width: 100%;
   padding: 12px;
@@ -354,61 +280,136 @@ body.register-page {
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
-  font-size: 16px;
-  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
 }
 
 .login-container button:hover {
-  background: linear-gradient(135deg, #ffc107, #ffee58);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
+  background: linear-gradient(135deg, #ffc107, #ffee58);
 }
 
-/* Dòng chuyển đổi */
-.login-container p {
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-.login-container a {
-  color: #ffcc00;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.login-container a:hover {
-  color: #fff;
-  text-shadow: 0 0 5px #ffcc00;
-}
-
-/* Nút quay lại trang chủ */
 .back-home {
   display: inline-block;
-  margin-top: 12px;
-  padding: 8px 14px;
-  border: 1px solid #ffcc00;
-  border-radius: 8px;
+  margin-top: 10px;
   color: #ffcc00;
   text-decoration: none;
+  border: 1px solid #ffcc00;
+  padding: 5px 10px;
+  border-radius: 5px;
   transition: 0.3s;
 }
 
 .back-home:hover {
   background: #ffcc00;
   color: #222;
-  box-shadow: 0 0 10px #ffcc00;
 }
 
-/* Hiệu ứng fade-in */
+/* -------------------- */
+/* 🔹 TRANG CHI TIẾT    */
+/* -------------------- */
+.detail-img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px 0 30px;
+  box-shadow: 0 5px 25px rgba(255, 204, 0, 0.3);
+  transition: 0.4s;
+}
+.detail-img:hover {
+  transform: scale(1.02);
+}
+
+.section .container {
+  background: #fff;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.section h2 {
+  color: #ff9800;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  text-shadow: 0 0 5px rgba(255, 152, 0, 0.4);
+}
+
+.section h3 {
+  color: #ff9800;
+  margin-top: 30px;
+  font-size: 20px;
+  border-left: 4px solid #ff9800;
+  padding-left: 10px;
+}
+
+.section p {
+  color: #444;
+  margin-top: 10px;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.section ul {
+  background: #fffaf0;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin: 15px 0;
+  list-style: none;
+}
+
+.section ul li {
+  padding: 6px 0;
+}
+.section ul li::before {
+  content: "🎮 ";
+}
+
+.section button {
+  display: block;
+  margin: 40px auto 0;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff9800, #ffcc00);
+  color: #222;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+.section button:hover {
+  background: linear-gradient(135deg, #ffc107, #ffee58);
+  transform: translateY(-2px);
+}
+
+/* -------------------- */
+/* 🔹 FOOTER            */
+/* -------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a1a1a;
+  color: #bbb;
+  border-top: 3px solid #ff9800;
+  font-size: 14px;
+}
+
+/* -------------------- */
+/* 🔹 HIỆU ỨNG CHUNG    */
+/* -------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-

@@ -12,7 +12,14 @@ body {
   color: #333;
   scroll-behavior: smooth;
 }
-
+/* Trang đăng nhập */
+.login-page {
+  background: url("images/login.jpg") center/cover no-repeat;
+}
+/* Trang đăng nhập */
+.register-page {
+  background: url("images/register.jpg") center/cover no-repeat;
+}
 /* Header */
 .header {
   background: #111;

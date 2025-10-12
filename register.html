@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng ký - Alex Game Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <h2>📝 Đăng ký tài khoản</h2>
+    <form id="registerForm">
+      <input type="text" id="regUser" placeholder="Tên đăng nhập" required />
+      <input type="email" id="regEmail" placeholder="Email" required />
+      <input type="password" id="regPass" placeholder="Mật khẩu" required />
+      <button type="submit">Đăng ký</button>
+    </form>
+    <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+  </div>
+
+  <script>
+    // Xử lý đăng ký
+    document.getElementById("registerForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const user = document.getElementById("regUser").value.trim();
+      const email = document.getElementById("regEmail").value.trim();
+      const pass = document.getElementById("regPass").value.trim();
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      if (users.find(u => u.username === user)) {
+        alert("Tên người dùng đã tồn tại!");
+        return;
+      }
+
+      users.push({ username: user, email: email, password: pass });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Đăng ký thành công! Hãy đăng nhập.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

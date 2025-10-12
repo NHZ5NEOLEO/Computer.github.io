@@ -57,16 +57,17 @@ body {
 }
 
 .navbar a {
-  color: #fff;
-  margin-left: 20px;
+  color: #ffcc00;
   text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
   transition: 0.3s;
 }
 
 .navbar a:hover {
-  color: #ff9800;
+  color: #fff;
+  text-shadow: 0 0 8px #ffcc00;
 }
-
 /* -------------------- */
 /* 🔹 HERO SECTION      */
 /* -------------------- */

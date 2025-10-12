@@ -55,9 +55,15 @@ body {
   transition: 0.3s;
 }
 
-.navbar a:hover {
+.navbar a {
   color: #fff;
-  text-shadow: 0 0 8px #ffcc00;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ff9800;
 }
 
 /* -------------------- */

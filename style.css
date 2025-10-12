@@ -59,6 +59,7 @@ body {
   color: #fff;
   overflow: hidden;
   transition: background 0.8s ease-in-out; /* 👈 hiệu ứng mượt khi đổi ảnh */
+  background: url("images/banner.png") center/cover no-repeat;
 }
 
 /* Lớp phủ mờ giúp chữ dễ đọc */
@@ -289,6 +290,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: url("images/login.jpg") center/cover no-repeat;
 }
 .login-container {
   background: rgba(0, 0, 0, 0.7);

@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Đăng nhập - Alex Game Blog</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="login-page">
   <div class="login-container">
     <h2>🔐 Đăng nhập</h2>
     <form id="loginForm">
-      <input type="text" id="username" placeholder="Tên đăng nhập" required>
-      <input type="password" id="password" placeholder="Mật khẩu" required>
+      <input type="text" id="loginUser" placeholder="Tên đăng nhập" required />
+      <input type="password" id="loginPass" placeholder="Mật khẩu" required />
       <button type="submit">Đăng nhập</button>
     </form>
-    <p>Chưa có tài khoản? <a href="#" id="registerLink">Đăng ký</a></p>
+    <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
   </div>
 
   <script>
-    // Đăng nhập demo lưu trên localStorage
+    // Xử lý đăng nhập
     document.getElementById("loginForm").addEventListener("submit", e => {
       e.preventDefault();
-      const user = document.getElementById("username").value.trim();
-      const pass = document.getElementById("password").value.trim();
+      const user = document.getElementById("loginUser").value.trim();
+      const pass = document.getElementById("loginPass").value.trim();
 
-      const storedUser = localStorage.getItem("user");
-      const storedPass = localStorage.getItem("pass");
+      // Lấy danh sách user đã đăng ký
+      const users = JSON.parse(localStorage.getItem("users")) || [];
 
-      if (user === storedUser && pass === storedPass) {
+      const found = users.find(u => u.username === user && u.password === pass);
+      if (found) {
         alert("Đăng nhập thành công!");
         localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("currentUser", user);
         window.location.href = "index.html";
       } else {
-        alert("Sai thông tin hoặc chưa đăng ký!");
-      }
-    });
-
-    document.getElementById("registerLink").addEventListener("click", e => {
-      e.preventDefault();
-      const newUser = prompt("Nhập tên đăng ký:");
-      const newPass = prompt("Nhập mật khẩu:");
-      if (newUser && newPass) {
-        localStorage.setItem("user", newUser);
-        localStorage.setItem("pass", newPass);
-        alert("Đăng ký thành công, hãy đăng nhập lại!");
+        alert("Sai tài khoản hoặc mật khẩu!");
       }
     });
   </script>
 </body>
 </html>
-

@@ -12,14 +12,7 @@ body {
   color: #333;
   scroll-behavior: smooth;
 }
-/* Trang đăng nhập */
-.login-page {
-  background: url("images/login.jpg") center/cover no-repeat;
-}
-/* Trang đăng nhập */
-.register-page {
-  background: url("images/register.jpg") center/cover no-repeat;
-}
+
 /* Header */
 .header {
   background: #111;
@@ -66,6 +59,7 @@ body {
   text-align: center;
   color: #fff;
   overflow: hidden;
+  transition: background 0.8s ease-in-out; /* 👈 hiệu ứng mượt khi đổi ảnh */
 }
 
 /* Lớp phủ mờ giúp chữ dễ đọc */

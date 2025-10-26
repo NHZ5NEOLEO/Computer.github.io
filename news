@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Điểm nóng AAA: GTA 6 và Assassin's Creed Shadows - Alex Game Blog</title>
+  <meta name="description" content="Tin tức game AAA mới nhất! Cập nhật về trailer GTA 6 từ Rockstar và thông tin chi tiết về Assassin's Creed Shadows (Nhật Bản).">
+  <meta name="keywords" content="tin tức game, game AAA, GTA 6, Assassin's Creed Shadows, Rockstar, Ubisoft, game mới 2025">
+  <meta name="author" content="Alex">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.png">
+  
+  </head>
+<body>
+  <header class="header">
+    <div class="container">
+    
+      <p class="logo">🎮 Alex Game Blog</p>
+      
+      <nav class="navbar">
+        <a href="index.html">Trang chủ</a>
+        <a href="index.html#news">Tin tức</a>
+        <a href="index.html#reviews">Đánh giá</a>
+        <a href="index.html#guides">Hướng dẫn</a>
+        <a href="index.html#contact">Liên hệ</a>
+        
+        <a href="login.html" id="userStatus">Đăng nhập</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container article-container"> 
+    
+      <h1>🔥 Điểm nóng AAA: GTA 6 tung trailer và Assassin's Creed Shadows gây bão</h1>
+      
+      <img src="images/news-aaa.jpg" alt="Tin tức game AAA mới nhất GTA 6 và AC Shadows" class="detail-img">
+
+      <h3>🕹️ 1. Grand Theft Auto 6 (GTA 6) - Cơn địa chấn từ Rockstar</h3>
+      <p>
+        Không còn nghi ngờ gì nữa, <b>GTA 6</b> đang là cái tên được nhắc đến nhiều nhất. Sau nhiều năm chờ đợi, 
+        <a href="https://www.rockstargames.com/VI/gta-vi" target="_blank" rel="noopener noreferrer">Rockstar Games</a> 
+        đã chính thức tung trailer đầu tiên, phá vỡ mọi kỷ lục về lượt xem. Trailer xác nhận bối cảnh sẽ quay trở lại Vice City (phiên bản hiện đại của Miami) và giới thiệu hai nhân vật chính, trong đó có một nữ nhân vật chính đầu tiên của series.
+      </p>
+      <p>
+        Nền đồ họa trong trailer thực sự ấn tượng, cho thấy một thế giới "Leonida" (phiên bản Florida) sống động, chi tiết và có phần "điên rồ" đặc trưng. Trò chơi dự kiến phát hành vào năm 2025 và chắc chắn sẽ là một bom tấn làm rung chuyển ngành công nghiệp game.
+      </p>
+
+      <h3>⚔️ 2. Assassin's Creed Shadows - Hành trình tại Nhật Bản</h3>
+      <p>
+        Sau bao yêu cầu từ fan hâm mộ, 
+        <a href="https://www.ubisoft.com/en-us/game/assassins-creed/shadows" target="_blank" rel="noopener noreferrer">Ubisoft</a> 
+        cuối cùng đã công bố <b>Assassin's Creed Shadows</b>, lấy bối cảnh Nhật Bản phong kiến. Đây là một trong những bối cảnh được mong chờ nhất lịch sử series.
+      </p>
+      <p>
+        Trò chơi sẽ giới thiệu cơ chế "dual protagonist" (song hành hai nhân vật) độc đáo: Naoe, một nữ Shinobi nhanh nhẹn, và Yasuke, một Samurai huyền thoại (dựa trên nhân vật lịch sử có thật). Người chơi có thể chuyển đổi linh hoạt giữa hai nhân vật để thực hiện các nhiệm vụ ám sát lén lút hoặc chiến đấu trực diện. Game hứa hẹn một thế giới mở rộng lớn, đồ họa thế hệ mới và một cốt truyện sâu sắc.
+      </p>
+      
+      <h3>⭐ Tạm kết</h3>
+      <p>
+        Cả hai tựa game đều đang nhắm đến việc phát hành trong năm 2025, hứa hẹn một năm bùng nổ cho game thủ. Alex Game Blog sẽ tiếp tục theo dõi và cập nhật những thông tin mới nhất về các siêu phẩm này.
+      </p>
+
+      <div class="share-buttons article-share">
+        <span>Chia sẻ bài viết:</span>
+        <a href="httpspost:https://www.facebook.com/sharer/sharer.php?u=URL_BAI_VIET" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="httpspost:https://twitter.com/intent/tweet?url=URL_BAI_VIET&text=Tin nóng AAA: GTA 6 và AC Shadows!" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://zalo.me/share" target="_blank" rel="noopener noreferrer">Zalo</a>
+      </div>
+      
+      <button onclick="window.history.back()">⬅ Quay lại</button>
+      
+      <div class="related-posts">
+        <h4>Bài viết liên quan:</h4>
+        <ul>
+          <li><a href="detail-silksong.html">Review: Hollow Knight - Silksong</a></li>
+          <li><a href="detail-battlefield.html">Review: Battlefield 6 (Sắp có)</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="httpsPOST_https://facebook.com/TEN_TRANG_CUA_BAN" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="httpsPOST_https://youtube.com/KENH_CUA_BAN" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="httpsPOST_https://tiktok.com/KENH_CUA_BAN" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+      <p>&copy; 2025 Alex Game Blog | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hiển thị trạng thái đăng nhập
+    if (localStorage.getItem("loggedIn") === "true") {
+      const userStatus = document.getElementById("userStatus");
+      userStatus.textContent = "Đăng xuất";
+      userStatus.onclick = (e) => {
+        e.preventDefault(); 
+        localStorage.removeItem("loggedIn");
+        alert("Bạn đã đăng xuất.");
+        window.location.reload();
+      };
+    }
+  </script>
+</body>
+</html>

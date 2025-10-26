@@ -1,6 +1,5 @@
 /* ======================================= */
-/* 🎮 ALEX GAME BLOG - STYLE.CSS           */
-/* Cập nhật: Sắp xếp lại theo khu vực     */
+/* 🎮 ALEX GAME BLOG - STYLE.CSS (Đã tối ưu) */
 /* ======================================= */
 
 /* -------------------- */
@@ -40,13 +39,16 @@ body {
   margin: auto;
 }
 
+/* GHI CHÚ: Style cho class .logo (dùng cho cả h1 và p)
+   Điều này RẤT TỐT vì nó cho phép bạn dùng <h1 class="logo"> 
+   ở trang chủ và <p class="logo"> ở trang con mà vẫn giữ style. */
 .logo {
   font-size: 24px;
   font-weight: bold;
 }
 
 .navbar {
-  margin-top: 10px;
+  /* GHI CHÚ: Xóa margin-top: 10px để căn giữa navbar đẹp hơn */
 }
 
 .navbar a {
@@ -63,9 +65,11 @@ body {
 }
 
 /* -------------------- */
-/* 🔹 HERO SECTION      */
+/* 🔹 HERO SECTION     */
 /* -------------------- */
 .hero {
+  /* GHI CHÚ (Điểm 8): File "banner.png" này nên được nén lại
+     (dưới 500KB) để tối ưu tốc độ tải trang. */
   background: url("images/banner.png") no-repeat center center/cover;
   height: 70vh;
   display: flex;
@@ -163,6 +167,29 @@ body {
   text-decoration: underline;
 }
 
+/* GHI CHÚ (Điểm 9): Thêm style cho các nút chia sẻ (còn thiếu) */
+.share-buttons {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+
+.share-buttons span {
+  font-weight: 600;
+  color: #555;
+}
+
+.share-buttons a {
+  color: #777;
+  text-decoration: none;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.share-buttons a:hover {
+  color: #ff9800;
+}
+
 /* -------------------- */
 /* 🔹 HƯỚNG DẪN (GUIDE) */
 /* -------------------- */
@@ -193,7 +220,7 @@ body {
 }
 
 /* -------------------- */
-/* 🔹 FORM LIÊN HỆ      */
+/* 🔹 FORM LIÊN HỆ     */
 /* -------------------- */
 .contact {
   background: #fffbe6;
@@ -234,6 +261,7 @@ body {
 /* -------------------- */
 body.login-page,
 body.register-page {
+  /* GHI CHÚ (Điểm 8): File "login.jpg" cũng nên được nén lại. */
   background: url("images/login.jpg") no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
@@ -254,7 +282,8 @@ body.register-page {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-.login-container h2 {
+/* GHI CHÚ (Điểm 4): Đã đổi "h2" thành "h1" để khớp với HTML đã tối ưu. */
+.login-container h1 {
   margin-bottom: 20px;
   color: #ffcc00;
   font-size: 28px;
@@ -289,6 +318,20 @@ body.register-page {
   background: linear-gradient(135deg, #ffc107, #ffee58);
 }
 
+/* GHI CHÚ: Sửa lại style cho link "Đã có tài khoản?" */
+.login-container p {
+  margin-top: 15px;
+}
+.login-container p a {
+  color: #ffcc00;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-container p a:hover {
+  text-decoration: underline;
+}
+
+
 .back-home {
   display: inline-block;
   margin-top: 10px;
@@ -306,7 +349,7 @@ body.register-page {
 }
 
 /* -------------------- */
-/* 🔹 TRANG CHI TIẾT    */
+/* 🔹 TRANG CHI TIẾT     */
 /* -------------------- */
 .detail-img {
   width: 100%;
@@ -319,7 +362,10 @@ body.register-page {
   transform: scale(1.02);
 }
 
-.section .container {
+/* GHI CHÚ: Đã đổi ".section .container" thành ".article-container"
+   Đây là THAY ĐỔI QUAN TRỌNG để sửa lỗi style này
+   không bị áp dụng nhầm lên trang chủ (index.html). */
+.article-container {
   background: #fff;
   max-width: 900px;
   margin: auto;
@@ -328,7 +374,9 @@ body.register-page {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.section h2 {
+/* GHI CHÚ: Dùng .article-container để style cho h1, h3...
+   chỉ riêng trong trang chi tiết. */
+.article-container h1 {
   color: #ff9800;
   text-align: center;
   margin-bottom: 25px;
@@ -336,7 +384,7 @@ body.register-page {
   text-shadow: 0 0 5px rgba(255, 152, 0, 0.4);
 }
 
-.section h3 {
+.article-container h3 {
   color: #ff9800;
   margin-top: 30px;
   font-size: 20px;
@@ -344,14 +392,14 @@ body.register-page {
   padding-left: 10px;
 }
 
-.section p {
+.article-container p {
   color: #444;
   margin-top: 10px;
   text-align: justify;
   line-height: 1.7;
 }
 
-.section ul {
+.article-container ul {
   background: #fffaf0;
   padding: 15px 25px;
   border-radius: 10px;
@@ -359,14 +407,15 @@ body.register-page {
   list-style: none;
 }
 
-.section ul li {
+.article-container ul li {
   padding: 6px 0;
 }
-.section ul li::before {
+.article-container ul li::before {
   content: "🎮 ";
 }
 
-.section button {
+/* GHI CHÚ: Style cho nút Quay lại */
+.article-container button {
   display: block;
   margin: 40px auto 0;
   padding: 12px 28px;
@@ -380,13 +429,43 @@ body.register-page {
   transition: 0.3s;
   box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
 }
-.section button:hover {
+.article-container button:hover {
   background: linear-gradient(135deg, #ffc107, #ffee58);
   transform: translateY(-2px);
 }
 
+/* GHI CHÚ (Điểm 6): Thêm style cho "Bài viết liên quan" */
+.related-posts {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+.related-posts h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.related-posts ul {
+  list-style: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.related-posts ul li {
+  padding: 5px 0;
+}
+.related-posts ul li a {
+  text-decoration: none;
+  color: #ff9800;
+  font-weight: 500;
+}
+.related-posts ul li a:hover {
+  text-decoration: underline;
+}
+
+
 /* -------------------- */
-/* 🔹 FOOTER            */
+/* 🔹 FOOTER             */
 /* -------------------- */
 footer {
   text-align: center;
@@ -395,6 +474,22 @@ footer {
   color: #bbb;
   border-top: 3px solid #ff9800;
   font-size: 14px;
+}
+
+/* GHI CHÚ (Điểm 9): Thêm style cho link Mạng Xã Hội ở footer */
+.social-links {
+  margin-bottom: 15px;
+}
+.social-links a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.social-links a:hover {
+  color: #fff;
 }
 
 /* -------------------- */

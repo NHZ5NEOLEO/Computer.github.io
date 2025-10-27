@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Liên hệ - Alex Game Blog</title>
+  <meta name="description" content="Liên hệ với Alex Game Blog để gửi góp ý, hợp tác hoặc báo cáo vấn đề. Chúng tôi luôn sẵn sàng lắng nghe bạn.">
+  <meta name="keywords" content="liên hệ, contact, alex game blog, góp ý">
+  <meta name="author" content="Alex">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.png">
+  
+  </head>
+<body>
+  <header class="header">
+    <div class="container">
+    
+      <p class="logo">🎮 Alex Game Blog</p>
+      
+      <nav class="navbar">
+        <a href="index.html">Trang chủ</a>
+        <a href="index.html#news">Tin tức</a>
+        <a href="reviews.html">Đánh giá</a>
+        <a href="guides.html">Hướng dẫn</a>
+        <a href="contact.html">Liên hệ</a>
+        
+        <a href="login.html" id="userStatus">Đăng nhập</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="contact-page" class="section contact">
+    <div class="container">
+    
+      <h1>📩 Liên hệ với chúng tôi</h1>
+      <p style="text-align: center; margin-bottom: 30px;">Nếu bạn có bất kỳ câu hỏi, góp ý, hoặc mong muốn hợp tác, đừng ngần ngại gửi biểu mẫu bên dưới!</p>
+      
+      <form class="contact-form" id="mainContactForm">
+        <input type="text" placeholder="Họ và tên" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Nội dung" required></textarea>
+        <button type="submit">Gửi</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="httpsPOST_https://facebook.com/TEN_TRANG_CUA_BAN" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="httpsPOST_https://youtube.com/KENH_CUA_BAN" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="httpsPOST_https://tiktok.com/KENH_CUA_BAN" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+      <p>&copy; 2025 Alex Game Blog | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("mainContactForm").addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Cảm ơn bạn! Thông tin đã được gửi.');
+      e.target.reset();
+    });
+
+    // Script hiển thị trạng thái đăng nhập
+    if (localStorage.getItem("loggedIn") === "true") {
+      const userStatus = document.getElementById("userStatus");
+      userStatus.textContent = "Đăng xuất";
+      userStatus.onclick = (e) => {
+        e.preventDefault(); 
+        localStorage.removeItem("loggedIn");
+        alert("Bạn đã đăng xuất.");
+        window.location.reload();
+      };
+    }
+  </script>
+</body>
+</html>
